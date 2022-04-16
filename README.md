@@ -9,6 +9,9 @@ The target dataset of this implementation is the Vimeo-90k dataset. The sample d
 
 Please see the Vimeo-90k dataset documentation for more details.
 
+# Pre-trained model
+Please contact us for more information.
+
 # Reference
 
 ```
