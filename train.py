@@ -2,7 +2,6 @@
 Created on Jul 27, 2021
 
 @author: Quang Tran
-Train version 3.x: down-up scale generator with optical flow-based pre-processing.
 '''
 
 import argparse
