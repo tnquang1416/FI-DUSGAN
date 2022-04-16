@@ -32,7 +32,7 @@ parser.add_argument("--lr_decay", type=int, default=20, help="adam: learning rat
 parser.add_argument("--channels", type=int, default=3, help="number of image channels")
 parser.add_argument("--sample_interval", type=int, default=500, help="number of batches between image sampling")
 parser.add_argument("--lambda_adv", type=float, default=0.0001, help="the default weight of adv Loss")
-parser.add_argument("--lambda_px_loss", type=float, default=1.0, help="the default weight of L1 Loss")
+parser.add_argument("--lambda_px_loss", type=float, default=1.0, help="the default weight of L2 Loss")
 parser.add_argument("--lambda_gdl", type=float, default=1.0, help="the default weight of GDL Loss")
 parser.add_argument("--lambda_ms_ssim", type=float, default=1.0, help="the default weight of MS-SSIM Loss")
 parser.add_argument("--path_gen", type=str, default=None, help="loaded generator for training")
@@ -119,7 +119,7 @@ def _train_interval(in_pres, in_lats, gt):
     # Calculate gradient for G
     # Loss measures generator's ability to fool the discriminator and generate similar image to ground truth
     adv_loss = lambda_adv * adversarial_loss(net_dis(in_pres, gen_imgs, in_lats), valid)
-    rec_loss = lambda_l1 * l2_loss(gen_imgs, gt) + lambda_gdl * gd_loss(gen_imgs, gt) + lambda_ms_ssim * ms_ssim(gen_imgs, gt)
+    rec_loss = lambda_px_loss * l2_loss(gen_imgs, gt) + lambda_gdl * gd_loss(gen_imgs, gt) + lambda_ms_ssim * ms_ssim(gen_imgs, gt)
     g_loss = adv_loss + rec_loss
     
     g_loss.backward()
