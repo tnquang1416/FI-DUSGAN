@@ -35,7 +35,6 @@ def TransConv_Block(in_channels, out_channels=None, kernel_size=4, stride=2, pad
 class FrameInterpolationGenerator(nn.Module):
     '''
     The generator network of the proposed framework, in which follows the baseline and handle 128x128 input frames.
-    Version 1.8
     '''
 
     def __init__(self, nfg=32):
@@ -47,10 +46,9 @@ class FrameInterpolationGenerator(nn.Module):
         super(FrameInterpolationGenerator, self).__init__()
         self.nfg = nfg  # the size of feature map
         self.c = 3  # output channel
-        self.version = "1.7.0"
+        self.version = "down-up_generator"
 
         self._initialize_blocks()
-        self._initialize_according_version()
         self._initialize_pre_gen_blocks()
     # end constructor
     
@@ -123,10 +121,6 @@ class FrameInterpolationGenerator(nn.Module):
             )
         
     # end _initialize_blocks
-    
-    def _initialize_according_version(self):
-        pass
-    # end _initialize_according_version
 
     def forward(self, frame1, frame2):
         '''
@@ -245,7 +239,6 @@ class FrameInterpolationDiscriminator(nn.Module):
         self.c = 3  # output channel
         
         self._initialize_blocks()
-        self._initialize_according_version()
 
     # end instructor
     
@@ -277,11 +270,6 @@ class FrameInterpolationDiscriminator(nn.Module):
             )
         
     # end _initialize_blocks
-    
-    def _initialize_according_version(self):
-        pass
-        
-    # end _initialize_according_version
     
     def forward(self, frame1, frame2, frame3):
         input_padded = torch.cat((frame1, frame2, frame3), 1)
