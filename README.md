@@ -1,5 +1,5 @@
 # DUSGAN-FI
-This is the official implementation for Video Frame Interpolation Via Down-Up Scale Generative Adversarial Networks (2022).
+This is the official implementation for [Video Frame Interpolation Via Down-Up Scale Generative Adversarial Networks (2022)](https://doi.org/10.1016/j.cviu.2022.103434).
 
 # Requirements
 For using this implementation, we recommend PyTorch with version 1.5.0 or later.
