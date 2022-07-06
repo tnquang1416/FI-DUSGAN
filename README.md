@@ -20,8 +20,6 @@ Please contact us for more information.
   journal={Computer Vision and Image Understanding}, 
   title={Video Frame Interpolation Via Down-Up Scale Generative Adversarial Networks}, 
   year={2022},
-  volume={?},
-  number={},
-  pages={?-?},
-  doi={?}}
+  volume={220},
+  doi={https://doi.org/10.1016/j.cviu.2022.103434}}
 ```
