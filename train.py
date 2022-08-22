@@ -66,7 +66,7 @@ def load_generator(path=None):
     model_state_dict, optim_state_dict, epoch, version, loss = model_utils.load_model(path)
     net_gen.load_state_dict(model_state_dict)
     
-    return optim_state_dict, epoch, version, loss
+    return optim_state_dict, epoch, loss
 
 # end load_generator
 
@@ -79,7 +79,7 @@ def load_discriminator(path=None):
     model_state_dict, optim_state_dict, epoch, version, loss = model_utils.load_model(path)
     net_dis.load_state_dict(model_state_dict)
     
-    return optim_state_dict, epoch, version, loss
+    return optim_state_dict, epoch, loss
 
 # end load_discriminator
 
