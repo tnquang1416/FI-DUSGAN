@@ -238,8 +238,8 @@ def main():
     
     print("==============<Prepare dataset/>=============================")
     t1 = time.time()
-    dataloader = general_utils.load_dataset_from_path_file(batch_size=opt.batch_size, txt_path=data_dir, is_testing=False, patch_size=opt.patch_size)
-	test_dataloader = general_utils.load_dataset_from_path_file(batch_size=1, txt_path=val_dir, is_testing=True, patch_size=opt.patch_size)
+    dataloader = utils.load_dataset_from_path_file(batch_size=opt.batch_size, txt_path=data_dir, is_testing=False, patch_size=opt.patch_size)
+	test_dataloader = utils.load_dataset_from_path_file(batch_size=1, txt_path=val_dir, is_testing=True, patch_size=opt.patch_size)
     print("==> Takes total %1.4fs" % ((time.time() - t1)))
     
 	print("==============<Training.../>====================================")
