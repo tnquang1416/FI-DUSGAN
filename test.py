@@ -12,7 +12,7 @@ import torch
 from torch import cuda
 
 from nets import net
-from utils import CONSTANT, model_utils
+from utils import CONSTANT, model_utils, utils
 from observers import cpt_test_observer
 
 parser = argparse.ArgumentParser()
@@ -57,7 +57,7 @@ def main():
     
     print("==============<Prepare dataset/>=============================")
     t1 = time.time()
-    test_dataloader = general_utils.load_dataset_from_path_file(batch_size=1, txt_path=test_dir, is_testing=True, patch_size=opt.patch_size)
+    test_dataloader = utils.load_dataset_from_path_file(batch_size=1, txt_path=test_dir, is_testing=True, patch_size=opt.patch_size)
     print("==> Takes total %1.4fs" % ((time.time() - t1)))
     
     print("==============<Training.../>====================================")
