@@ -9,6 +9,9 @@ The target dataset of this implementation is the Vimeo-90k dataset. The sample d
 
 Please see the Vimeo-90k dataset documentation for more details.
 
+# Run the code
+```python train.py --path=cpt_folder```
+
 # Pre-trained model
 Please contact us for more information.
 
