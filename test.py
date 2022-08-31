@@ -60,7 +60,7 @@ def main():
     test_dataloader = utils.load_dataset_from_path_file(batch_size=1, txt_path=test_dir, is_testing=True, patch_size=opt.patch_size)
     print("==> Takes total %1.4fs" % ((time.time() - t1)))
     
-    print("==============<Training.../>====================================")
+    print("==============<Testing.../>====================================")
     cpt_testing_observer = cpt_test_observer.CheckPointTest_Observer(opt.path, test_dataloader)
     psnr, ssim = cpt_testing_observer.notify(net_gen, cur_gen_epoch, False, False)
 	
