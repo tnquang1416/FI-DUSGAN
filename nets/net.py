@@ -260,8 +260,7 @@ class FrameInterpolationDiscriminator(nn.Module):
             nn.BatchNorm2d(self.nfg * 16),
             nn.LeakyReLU(0.2, inplace=True),
             nn.Dropout2d(0.25),
-            nn.Conv2d(self.nfg * 16, 1, kernel_size=4, stride=1, padding=0, bias=False),
-            nn.Sigmoid()
+            nn.Conv2d(self.nfg * 16, 1, kernel_size=4, stride=1, padding=0, bias=False)
             )
         
         self.input_processing = nn.Sequential(
