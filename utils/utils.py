@@ -7,6 +7,7 @@ Created on Nov 18, 2020
 import numpy as np
 
 from torch.utils.data.dataloader import DataLoader
+from torchvision import transforms as tf
 
 from utils import calculator, dataset_handler, CONSTANT
 
@@ -27,8 +28,8 @@ def cal_psnr_img_from_tensor(tensor1, tensor2):
     :param tensor1: tensor
     :param tensor2: tensor
     '''
-    img1 = transform_tensor_to_img(tensor1)
-    img2 = transform_tensor_to_img(tensor2)
+    img1 = tf.ToPILImage()(tensor1)
+    img2 = tf.ToPILImage()(tensor2)
     diff = (np.array(img1) - np.array(img2))
     diff = diff ** 2
 
@@ -74,12 +75,12 @@ def get_sub_name_from_path(file_name):
     end = ".avi_"
     
     if (file_name.find(end) == -1):
-        return "";
+        return ""
     
     temp = file_name[file_name.find(start) + 1:]
     
     if temp == -1:
-        return "";
+        return ""
     
     return temp[:temp.find(end)]
 
@@ -125,7 +126,7 @@ def load_dataset_from_dir(batch_size, data_path, is_testing, patch_size):
 
 def load_dataset_from_path_file(batch_size, txt_path, is_testing, patch_size):
     print("Loading dataset: %s" % txt_path)
-    dataset = dataset_handler.DBreader_frame_interpolation(path_file=txt_path, patch_size=patch_size)
+    dataset = dataset_handler.DBreader_frame_interpolation(path_file=txt_path, patch_size=patch_size, resize=(128,128))
     data_loader = DataLoader(dataset=dataset, batch_size=batch_size, shuffle=not is_testing, num_workers=0)
     print("Done loading dataset with %d patches." % (dataset.__len__()))
     
