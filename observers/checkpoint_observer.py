@@ -45,6 +45,6 @@ class CheckPointSaverThread(threading.Thread):
     # end construction
     
     def run(self):
-        model_utils.save_models(self.net_gen, self.net_dis, self.optim_gen, self.optim_dis, self.epoch, self.path, self.version, False, self.loss_gen, self.loss_dis)
+        model_utils.save_models(self.net_gen, self.net_dis, self.optim_gen, self.optim_dis, self.epoch, self.path, False, self.loss_gen, self.loss_dis)
 
     # end run
