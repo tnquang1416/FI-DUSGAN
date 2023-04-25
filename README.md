@@ -13,7 +13,7 @@ Please see the Vimeo-90k dataset documentation for more details.
 ```python train.py --path=cpt_folder```
 
 # Pre-trained model
-Please file it on [Google Drive](https://drive.google.com/file/d/1VsVX13DKYpwNhxii-mSyAqlzeAlg_sEO/view?usp=sharing) and then put in the pre-trained folder. Note that rename the file to "net_gen.pt" might be required.
+Please find it on [Google Drive](https://drive.google.com/file/d/1VsVX13DKYpwNhxii-mSyAqlzeAlg_sEO/view?usp=sharing) and then put in the pre-trained folder. Note that rename the file to "net_gen.pt" might be required.
 
 # Reference
 
